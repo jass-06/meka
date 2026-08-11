@@ -1,0 +1,7 @@
+IT Incident Response Policy
+
+Security incidents must be reported within 24 hours of discovery to the
+IT Security team via the internal ticketing system or the security
+hotline. This includes suspected phishing, malware infections, lost or
+stolen devices, and unauthorized access attempts. Delayed reporting may
+result in escalation to HR for policy non-compliance.

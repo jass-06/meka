@@ -1,0 +1,8 @@
+IT VPN Policy
+
+All employees working remotely must connect via the company VPN before
+accessing internal systems, shared drives, or the corporate email server.
+VPN credentials are personal and must not be shared. Split tunneling is
+disabled by default; all traffic is routed through the corporate gateway
+while connected. Sessions time out automatically after 8 hours of
+inactivity and must be re-authenticated.

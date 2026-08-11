@@ -1,0 +1,31 @@
+# Secrets
+.env
+
+# Vector store (build artifact, not source)
+chroma_db/
+
+# Ingested data folder: ignore everything except the small curated demo docs
+# checked in on purpose so the project works out of the box. Do NOT commit
+# real company documents here.
+data/*
+!data/.gitkeep
+!data/it_vpn_policy.txt
+!data/it_incident_response.txt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+.pytest_cache/
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+.env
+
+.env

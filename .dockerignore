@@ -1,0 +1,13 @@
+.git
+.github
+.env
+chroma_db/
+data/*
+!data/.gitkeep
+__pycache__/
+*.pyc
+.pytest_cache/
+venv/
+.venv/
+tests/
+README.md

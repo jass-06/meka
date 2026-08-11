@@ -1,0 +1,24 @@
+[
+  {
+    "id": "q1",
+    "question": "What is the company VPN policy for remote work?",
+    "answers": [
+      "Employees must connect via company VPN when working remotely."
+    ],
+    "relevant_sources": [
+      "it_vpn_policy.txt",
+      "it_security_policy.txt"
+    ]
+  },
+  {
+    "id": "q2",
+    "question": "Within how many hours must security incidents be reported?",
+    "answers": [
+      "Security incidents must be reported within 24 hours."
+    ],
+    "relevant_sources": [
+      "it_incident_response.txt",
+      "nist_sp800_61r3_incident_response.pdf"
+    ]
+  }
+]
