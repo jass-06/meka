@@ -1,7 +1,7 @@
 # MEKA - Multimodal Enterprise Knowledge Assistant
 
 A RAG (Retrieval-Augmented Generation) system for chatting with internal
-company documents — policies, security guides, HR docs — with optional
+company documents - policies, security guides, HR docs - with optional
 image input. Built API-first: the same pipeline powers a Streamlit UI, a
 FastAPI REST service, and a terminal chat client.
 
@@ -82,9 +82,9 @@ cp .env.example .env
 ```
 
 Edit `.env`:
-- `HF_API_TOKEN` — **required**. Get one free at https://huggingface.co/settings/tokens
-- `GROQ_API_KEY` — optional, enables cloud assist mode. Get one at https://console.groq.com/keys
-- `MEKA_API_KEY` — optional, protects the REST API. Set it before deploying anywhere public.
+- `HF_API_TOKEN` - **required**. Get one free at https://huggingface.co/settings/tokens
+- `GROQ_API_KEY` - optional, enables cloud assist mode. Get one at https://console.groq.com/keys
+- `MEKA_API_KEY` - optional, protects the REST API. Set it before deploying anywhere public.
 
 ### 3. (Optional) Set up Ollama for local/offline answering
 
