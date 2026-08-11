@@ -1,4 +1,4 @@
-# MEKA — Multimodal Enterprise Knowledge Assistant
+# MEKA - Multimodal Enterprise Knowledge Assistant
 
 A RAG (Retrieval-Augmented Generation) system for chatting with internal
 company documents — policies, security guides, HR docs — with optional
@@ -10,21 +10,21 @@ FastAPI REST service, and a terminal chat client.
 Most take-home RAG demos are a single Streamlit script glued to one LLM
 call. MEKA is structured like something you'd actually deploy:
 
-- **API-first** — `rag/retrieval.py` exposes one `RAGPipeline` class; the
+- **API-first** - `rag/retrieval.py` exposes one `RAGPipeline` class; the
   Streamlit UI, the FastAPI service, the CLI, and `evaluation.py` are all
   thin clients of it. No logic is duplicated between them.
-- **Dual LLM routing** — Ollama (local, offline, free) is the default;
+- **Dual LLM routing** - Ollama (local, offline, free) is the default;
   Groq (cloud) is used as an on-demand "assist" mode, with automatic
   fallback either direction if a backend is down. Optional HyDE
   (hypothetical-document-embedding) query expansion improves recall in
   assist mode.
-- **Multimodal** — images are captioned via a HuggingFace vision model and
-  folded into the same text-embedding retrieval path, so you don't need a
+- **Multimodal** - images are captioned via a HuggingFace vision model and
+  folded into the same text embedding retrieval path, so you don't need a
   separate image vector index.
-- **Reranked retrieval** — a lightweight reranker blends vector distance
-  with keyword overlap so short, term-specific queries (policy names,
+- **Reranked retrieval** - a lightweight reranker blends vector distance
+  with keyword overlap so short, term specific queries (policy names,
   error codes) don't get lost to purely semantic drift.
-- **Tested, linted, containerized, CI'd** — see below.
+- **Tested, linted, containerized, CI'd** - see below.
 
 ## Architecture
 
@@ -34,7 +34,7 @@ meka/
 ├── api.py                  # FastAPI REST service (same pipeline, headless)
 ├── meka_chat.py             # Terminal chat client
 ├── offline_ingest.py        # Batch-ingest everything in ./data
-├── evaluation.py            # Retrieval + answer-quality eval harness
+├── evaluation.py            # Retrieval + answer quality eval harness
 ├── evaluation_data.json     # Sample eval questions/answers
 ├── rag/
 │   ├── config.py            # All env-driven settings
@@ -44,7 +44,7 @@ meka/
 │   ├── vector_store.py        # ChromaDB wrapper
 │   ├── reranker.py             # Semantic + keyword blended reranking
 │   ├── llm.py                   # Groq / Ollama routing + HyDE
-│   └── retrieval.py              # RAGPipeline — ties it all together
+│   └── retrieval.py              # RAGPipeline - ties it all together
 ├── tests/                    # Offline unit tests (no external API calls)
 ├── data/                      # Seed documents ingested by offline_ingest.py
 ├── Dockerfile / docker-compose.yml
@@ -94,7 +94,7 @@ ollama pull llama3.2
 ollama serve
 ```
 
-If you skip this, MEKA still works as long as `GROQ_API_KEY` is set — it
+If you skip this, MEKA still works as long as `GROQ_API_KEY` is set - it
 will just always use Groq.
 
 ### 4. Ingest documents
@@ -180,12 +180,12 @@ python evaluation.py --k 5
 
 ## Known limitations
 
-- Scanned/image-only PDFs won't extract text (no OCR yet).
-- The reranker is lexical + vector-distance, not a trained cross-encoder —
+- Scanned/image only PDFs won't extract text (no OCR yet).
+- The reranker is lexical + vector-distance, not a trained cross-encoder -
   good enough for demo-scale corpora, not a production-grade reranker.
 - `MEKA_API_KEY` is a single shared secret, not per-user auth — fine for a
   small team/demo, not for multi-tenant production use.
 
 ## License
 
-MIT — see [LICENSE](LICENSE).
+MIT - see [LICENSE](LICENSE).
